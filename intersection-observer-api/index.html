@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>IntersectionObserver</title>
+  </head>
+  <body>
+    <section class="hidden">
+      <h1>Hello, world!</h1>
+      <p>
+        The Intersection Observer API provides a way to asynchronously observe
+        changes in the intersection of a target element with an ancestor element
+        or with a top-level document's viewport.
+      </p>
+    </section>
+    <section class="hidden">
+      <h2>Why is this useful?</h2>
+      <p>
+        Lazy-loading of images or other content as a page is scrolled.
+        Implementing "infinite scrolling" web sites, where more and more content
+        is loaded and rendered as you scroll, so that the user doesn't have to
+        flip through pages. Reporting of visibility of advertisements in order
+        to calculate ad revenues. Deciding whether or not to perform tasks or
+        animation processes based on whether or not the user will see the
+        result.
+      </p>
+    </section>
+    <section class="hidden">
+      <h2>Creating an intersection observer.</h2>
+      <p>
+        <code>
+          let options = { root: document.querySelector('body'), rootMargin:
+          '0px', threshold: 1.0 }
+        </code>
+        <br />
+        <br />
+        <code>
+          const observer = new IntersectionObserver(callback, options)
+        </code>
+      </p>
+    </section>
+    <section class="hidden">
+      <h2>Targeting an element to be observed...</h2>
+      <p>
+        Once we have created an observer we can then watch an element and
+        whenever that element reaches the threshold that we have specified in
+        the observer callback, the callback is envoked
+      </p>
+      <br />
+      <code> let target = document.querySelector('#listItem');</code>
+      <br />
+      <code>observer.observe(target); </code>
+      <br />
+      <br />
+      <br />
+
+      let callback = (entries, observer) => { entries.forEach((entry) => { //
+      Each entry describes an intersection change for one observed target
+      element }) }
+    </section>
+    <section class="hidden">
+      <h2>What does IntersectionObserver return?</h2>
+      <p>Observer object</p>
+      <p>
+        intersectionRatio: 1
+        <span></span>
+          - What percentage of element observed is on the screen/viewport</span
+        >
+      </p>
+      <p>
+        isIntersecting: true
+        <span>- Is target element visible on the screen</span>
+      </p>
+    </section>
+    <section class="hidden">
+      <h2>What can be passed into options object</h2>
+      <dl>
+        <dt>root</dt>
+        <dd>The element that is used as the viewport for checking visibility of the target. Must be the ancestor of the target. Defaults to the browser viewport if not specified or if null.
+        </dd>
+        <dt>rootMargin</dt>
+        <dd>Margin around the root. Can have values similar to the CSS margin property, e.g. "10px 20px 30px 40px" (top, right, bottom, left). The values can be percentages. This set of values serves to grow or shrink each side of the root element's bounding box before computing intersections. Defaults to all zeros.
+        </dd>
+        <dt>threshold
+        </dt>
+        <dd>Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. If you only want to detect when visibility passes the 50% mark, you can use a value of 0.5. If you want the callback to run every time visibility passes another 25%, you would specify the array [0, 0.25, 0.5, 0.75, 1]. The default is 0 (meaning as soon as even one pixel is visible, the callback will be run). A value of 1.0 means that the threshold isn't considered passed until every pixel is visible.
+        </dd>
+      </dl>
+    </section>
+  </body>
+</html>
