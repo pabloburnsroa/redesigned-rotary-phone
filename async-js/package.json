@@ -1,0 +1,16 @@
+{
+  "name": "async",
+  "version": "1.0.0",
+  "description": "## What is the call stack? Mechanism for an interpreter to keep track of its place in a script that calls multiple functions. A stack is basic data structure which implements LIFO method - last in first out - e.g. think about stack of pancakes.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node": "^19.3.0"
+  },
+  "type": "module"
+}

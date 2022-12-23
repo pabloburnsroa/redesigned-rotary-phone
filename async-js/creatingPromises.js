@@ -22,7 +22,7 @@ const fakeRequest = (url) => {
 //     console.error(err);
 //   });
 
-const delayedColorChange = (color, delay) => {
+export const delayedColorChange = (color, delay) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       console.log(`I changed to color: ${color}`);
@@ -31,10 +31,10 @@ const delayedColorChange = (color, delay) => {
   });
 };
 
-delayedColorChange('red', 1000)
-  .then(() => delayedColorChange('orange', 1000))
-  .then(() => delayedColorChange('yellow', 1000))
-  .then(() => delayedColorChange('green', 1000))
-  .then(() => delayedColorChange('blue', 1000))
-  .then(() => delayedColorChange('indigo', 1000))
-  .then(() => delayedColorChange('violet', 1000));
+// delayedColorChange('red', 1000)
+//   .then(() => delayedColorChange('orange', 1000))
+//   .then(() => delayedColorChange('yellow', 1000))
+//   .then(() => delayedColorChange('green', 1000))
+//   .then(() => delayedColorChange('blue', 1000))
+//   .then(() => delayedColorChange('indigo', 1000))
+//   .then(() => delayedColorChange('violet', 1000));
